@@ -17,7 +17,7 @@
   ([string] #?(:clj (url-decode string "UTF-8")
                :cljs (some-> string str (js/decodeURIComponent))))
   #?(:clj ([string encoding]
-           (some-> string str (java.net.URLDecoder/decode encoding)))))
+           (some-> string str (java.net.URLDecoder/decode (str encoding))))))
 
 (defn uuid
   "Function for creating a UUID of the appropriate type for the platform.
