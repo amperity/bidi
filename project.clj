@@ -9,24 +9,24 @@
 
 ;;  :pedantic? :abort
 
-  :dependencies [[prismatic/schema "1.1.7"]]
+  :dependencies [[prismatic/schema "1.3.0"]]
 
   :plugins [[lein-cljsbuild "1.1.1"]
             [lein-doo "0.1.6"]]
 
   :prep-tasks ["javac" "compile"]
 
-  :profiles {:provided {:dependencies [[ring/ring-core "1.5.0" :exclusions [org.clojure/clojure]]]}
+  :profiles {:provided {:dependencies [[ring/ring-core "1.9.5" :exclusions [org.clojure/clojure]]]}
              :dev {:exclusions [[org.clojure/tools.reader]]
                    :resource-paths ["test-resources"]
                    ;;:global-vars {*warn-on-reflection* true}
-                   :dependencies [[org.clojure/clojure "1.8.0"]
-                                  [org.clojure/clojurescript "1.9.293"]
-                                  [org.clojure/tools.reader "1.0.0-beta4"]
+                   :dependencies [[org.clojure/clojure "1.11.1"]
+                                  [org.clojure/clojurescript "1.11.57"]
+                                  [org.clojure/tools.reader "1.3.6"]
                                   [ring/ring-mock "0.3.0"]
-                                  [compojure "1.6.0-beta2"]
-                                  [criterium "0.4.3"]
-                                  [org.mozilla/rhino "1.7.7.1"]]}}
+                                  [compojure "1.7.0"]
+                                  [criterium "0.4.6"]
+                                  [org.mozilla/rhino "1.7.14"]]}}
 
   :aliases {"deploy" ["do" "clean," "deploy" "clojars"]
             "test-cljs" ["doo" "rhino" "test" "once"]}
